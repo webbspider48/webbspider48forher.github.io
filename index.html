@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>System Notice</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="desktop">
+
+        <!-- Top Linux-style bar -->
+        <header class="top-bar">
+
+            <div class="activities">
+                Activities
+            </div>
+
+            <div class="system-icons">
+                <span>⌁</span>
+                <span>🔊</span>
+                <span>🔋</span>
+            </div>
+
+        </header>
+
+
+        <!-- Main welcome message -->
+        <main class="welcome">
+
+            <h1>It's been a while.</h1>
+
+            <p>❤️</p>
+
+            <button class="message-icon" onclick="openMessage()">
+
+                <span class="mail-icon">✉️</span>
+
+                <span class="message-count">1</span>
+
+                <span class="message-text">
+                    New Message
+                </span>
+
+            </button>
+
+        </main>
+
+
+        <!-- Bottom dock -->
+        <nav class="dock">
+
+            <div class="dock-icon">📁</div>
+            <div class="dock-icon">🌐</div>
+            <div class="dock-icon">✉️</div>
+            <div class="dock-icon">⚙️</div>
+
+        </nav>
+
+
+        <!-- Risk notification -->
+        <div id="notification" class="notification">
+
+            <div class="notification-title">
+                🔔 SYSTEM NOTICE
+            </div>
+
+            <div class="notification-body">
+
+                <strong>
+                    1 important message requires your attention.
+                </strong>
+
+                <p>
+                    <strong>Risk Level:</strong> HIGH ❤️
+                </p>
+
+                <p>
+                    <strong>Reason:</strong>
+                    It's been a while since you received one of these.
+                </p>
+
+                <button onclick="openLetter()">
+                    REVIEW MESSAGE
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Risk Assessment</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="assessment-desktop">
+
+
+        <!-- =========================
+             TOP BAR
+        ========================== -->
+
+        <header class="top-bar">
+
+            <div class="activities">
+                Activities
+            </div>
+
+            <div class="top-title">
+                Risk Management System
+            </div>
+
+            <div class="system-icons">
+
+                <span>⌁</span>
+                <span>🔊</span>
+                <span>🔋</span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             ASSESSMENT
+        ========================== -->
+
+        <main class="assessment-container">
+
+
+            <div
+                id="analysis-screen"
+                class="analysis-screen"
+            >
+
+                <div class="terminal-icon">
+                    💻
+                </div>
+
+
+                <h1>
+                    Running Final Assessment
+                </h1>
+
+
+                <p id="analysis-text">
+                    Checking message status...
+                </p>
+
+
+                <div class="analysis-loader">
+
+                    <div id="analysis-progress"></div>
+
+                </div>
+
+
+                <p class="small-text">
+                    Please wait...
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 RESULT
+            ========================== -->
+
+            <div
+                id="assessment-result"
+                class="assessment-result hidden"
+            >
+
+                <div class="result-window">
+
+
+                    <div class="window-header">
+
+                        <div class="window-title">
+
+                            🛡️ Risk Assessment Report
+
+                        </div>
+
+                        <div class="window-buttons">
+
+                            <button>−</button>
+                            <button>□</button>
+                            <button>×</button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-content">
+
+                        <div class="report-title">
+
+                            RISK ASSESSMENT COMPLETE
+
+                        </div>
+
+
+                        <div class="report-line"></div>
+
+
+                        <div class="report-item">
+
+                            <span>
+                                Risk Identified
+                            </span>
+
+                            <strong>
+                                Lack of love-letter
+                                communication
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-item">
+
+                            <span>
+                                Likelihood
+                            </span>
+
+                            <strong>
+                                HIGH
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-item">
+
+                            <span>
+                                Potential Impact
+                            </span>
+
+                            <strong>
+                                SIGNIFICANT
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-item">
+
+                            <span>
+                                Mitigation
+                            </span>
+
+                            <strong>
+                                ❤️ ONE LOVE LETTER
+                            </strong>
+
+                        </div>
+
+
+                        <div class="report-line"></div>
+
+
+                        <div class="final-status">
+
+                            <p>
+                                FINAL FINDING
+                            </p>
+
+                            <h2>
+                                YOU ARE LOVED. ❤️
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            class="final-button"
+                            onclick="showFinalMessage()"
+                        >
+                            VIEW FINAL STATUS
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 FINAL MESSAGE
+            ========================== -->
+
+            <div
+                id="final-message"
+                class="final-message hidden"
+            >
+
+                <div class="final-window">
+
+                    <div class="final-linux-logo">
+                        🐧
+                    </div>
+
+
+                    <h1>
+                        SYSTEM STATUS
+                    </h1>
+
+
+                    <div class="status-list">
+
+                        <div>
+                            <span>
+                                Risk Level
+                            </span>
+
+                            <strong>
+                                RESOLVED
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>
+                                Love Status
+                            </span>
+
+                            <strong>
+                                ACTIVE ❤️
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>
+                                Message Status
+                            </span>
+
+                            <strong>
+                                DELIVERED
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>
+                                System Integrity
+                            </span>
+
+                            <strong>
+                                100%
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="final-finding">
+
+                        <p>
+                            FINAL FINDING
+                        </p>
+
+                        <h2>
+                            YOU ARE LOVED.
+                        </h2>
+
+                        <span>
+                            ❤️
+                        </span>
+
+                    </div>
+
+
+                    <div class="signature-final">
+
+                        With love,
+
+                        <strong>
+                            Bigduggmustfall
+                        </strong>
+
+                    </div>
+
+
+                    <div class="terminal-easter-egg">
+
+                        <span>
+                            $
+                        </span>
+
+                        sudo apt install happiness
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- Dock -->
+
+        <nav class="dock">
+
+            <button>📁</button>
+            <button>🌐</button>
+            <button>✉️</button>
+            <button>⚙️</button>
+
+        </nav>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,268 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mail — Bigduggmustfall</title>
-
     <link rel="stylesheet" href="style.css">
-
 </head>
 
+<body data-page="letter">
 
-<body>
+    <div id="desktop" class="desktop">
 
-    <div class="letter-desktop">
+        <section class="window" id="letter-window"
+                 data-title="It's been a while... — Message"
+                 data-icon="✉️" data-static>
 
+            <div class="win-body">
 
-        <!-- =========================
-             TOP BAR
-        ========================== -->
-
-        <header class="top-bar">
-
-            <div class="activities">
-                Activities
-            </div>
-
-            <div class="top-title">
-                Mail
-            </div>
-
-            <div class="system-icons">
-
-                <span>⌁</span>
-                <span>🔊</span>
-                <span>🔋</span>
-
-            </div>
-
-        </header>
-
-
-        <!-- =========================
-             MAIL WINDOW
-        ========================== -->
-
-        <main class="mail-window">
-
-
-            <!-- Window header -->
-
-            <div class="window-header">
-
-                <div class="window-title">
-
-                    ✉️ Mail
-
+                <div class="toolbar">
+                    <button class="btn" id="btn-reply">↩ Reply</button>
+                    <button class="btn" id="btn-print">🖨 Print</button>
+                    <button class="btn" id="btn-delete">🗑 Delete</button>
                 </div>
 
-
-                <div class="window-buttons">
-
-                    <button>−</button>
-                    <button>□</button>
-                    <button>×</button>
-
+                <div class="message-info">
+                    <div><strong>From:</strong> Bigduggmustfall ❤️</div>
+                    <div><strong>To:</strong> Momo Smiles</div>
+                    <div><strong>Subject:</strong> It's been a while...</div>
                 </div>
 
-            </div>
+                <article class="letter-content">
+                    <p class="letter-greeting">Heyy Bhabhy.</p>
 
+                    <p>It's been a while since I made you one of these.</p>
 
-            <!-- Mail information -->
+                    <p>I've been caught up with everything lately, and I'm sorry it's taken me this long.</p>
 
-            <div class="message-info">
+                    <p>I know these little websites have kind of become my thing with you.</p>
 
-                <div>
+                    <p>So I couldn't let too much time pass without making another one.</p>
 
-                    <strong>From:</strong>
+                    <p>There isn't really some big reason behind this.</p>
 
-                    Bigduggmustfall ❤️
+                    <p>I just wanted to make you something again.</p>
 
+                    <p>And maybe remind you of something that I don't say enough.</p>
+
+                    <p class="important-message">You are loved.</p>
+
+                    <p>Even when life gets busy. Even when I disappear into my little world for a while.</p>
+
+                    <p>You're still someone I think about, care about, and appreciate having in my life.</p>
+
+                    <p>So yeah...</p>
+
+                    <p>Consider this your little reminder.</p>
+
+                    <p class="heart">❤️</p>
+
+                    <div class="letter-ending">
+                        <p>With love,</p>
+                        <p class="signature">Bigduggmustfall ❤️</p>
+                    </div>
+                </article>
+
+                <div class="window-status">
+                    <span>Message opened</span>
+                    <span>❤️</span>
                 </div>
 
-
-                <div>
-
-                    <strong>To:</strong>
-
-                    You
-
-                </div>
-
-
-                <div>
-
-                    <strong>Subject:</strong>
-
-                    It's been a while...
-
+                <div class="continue-bar">
+                    <button class="btn btn-primary" id="btn-continue">Continue →</button>
                 </div>
 
             </div>
-
-
-            <!-- =========================
-                 LETTER
-            ========================== -->
-
-            <article class="letter-content">
-
-                <p class="letter-greeting">
-                    Hey you.
-                </p>
-
-
-                <p>
-                    It's been a while since I made you
-                    one of these.
-                </p>
-
-
-                <p>
-                    I've been caught up with everything
-                    lately, and I'm sorry it's taken me
-                    this long.
-                </p>
-
-
-                <p>
-                    I know these little websites have
-                    kind of become my thing with you.
-                </p>
-
-
-                <p>
-                    So I couldn't let too much time pass
-                    without making another one.
-                </p>
-
-
-                <p>
-                    There isn't really some big reason
-                    behind this.
-                </p>
-
-
-                <p>
-                    I just wanted to make you something
-                    again.
-                </p>
-
-
-                <p>
-                    And maybe remind you of something
-                    that I don't say enough.
-                </p>
-
-
-                <p class="important-message">
-                    You are loved.
-                </p>
-
-
-                <p>
-                    Even when life gets busy.
-                    Even when I disappear into my
-                    little world for a while.
-                </p>
-
-
-                <p>
-                    You're still someone I think about,
-                    care about, and appreciate having
-                    in my life.
-                </p>
-
-
-                <p>
-                    So yeah...
-                </p>
-
-
-                <p>
-                    Consider this your little reminder.
-                </p>
-
-
-                <p class="heart">
-                    ❤️
-                </p>
-
-
-                <div class="letter-ending">
-
-                    <p>
-                        With love,
-                    </p>
-
-                    <p class="signature">
-                        Bigduggmustfall ❤️
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- =========================
-                 STATUS BAR
-            ========================== -->
-
-            <div class="window-status">
-
-                <span>
-                    Message opened
-                </span>
-
-                <span>
-                    ❤️
-                </span>
-
-            </div>
-
-        </main>
-
-
-        <!-- =========================
-             CONTINUE BUTTON
-        ========================== -->
-
-        <div class="continue-container">
-
-            <button
-                class="continue-button"
-                onclick="openAssessment()"
-            >
-                Continue →
-            </button>
-
-        </div>
-
-
-        <!-- Dock -->
-
-        <nav class="dock">
-
-            <button>📁</button>
-            <button>🌐</button>
-            <button>✉️</button>
-            <button>⚙️</button>
-
-        </nav>
+        </section>
 
     </div>
 
-
     <script src="script.js"></script>
-
 </body>
-
 </html>

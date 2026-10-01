@@ -1,215 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Bigdugg OS</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigdugg 7</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="booting" data-page="home">
 
-    <!-- =========================
-         BOOT SCREEN
-    ========================== -->
-
-    <div id="boot-screen" class="boot-screen">
-
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen" class="screen boot-screen">
         <div class="boot-content">
-
-            <div class="linux-logo">
-                🐧
-            </div>
-
-            <h1>BIGDUGG OS</h1>
-
-            <p>Starting something special...</p>
-
-            <div class="boot-loader">
-                <div id="boot-progress"></div>
-            </div>
-
-            <p id="boot-status">
-                Initialising...
-            </p>
-
+            <div class="win-logo"><i></i><i></i><i></i><i></i></div>
+            <h1>Starting Bigdugg 7</h1>
+            <div class="boot-loader"><div id="boot-progress"></div></div>
+            <p id="boot-status">Initialising...</p>
         </div>
-
+        <p class="boot-copy">Copyright © Bigdugg Corporation. Made with ❤️</p>
     </div>
 
-
-    <!-- =========================
-         DESKTOP
-    ========================== -->
-
-    <div id="desktop" class="desktop hidden">
-
-        <!-- Top bar -->
-
-        <header class="top-bar">
-
-            <div class="activities">
-                Activities
+    <!-- LOGIN SCREEN -->
+    <div id="login-screen" class="screen login-screen hidden">
+        <div class="login-box">
+            <div class="avatar">🌸</div>
+            <div class="login-name" id="login-name">User</div>
+            <div class="login-row">
+                <input type="password" id="login-pass" placeholder="Password" autocomplete="off">
+                <button id="login-go" class="login-go" aria-label="Log in">➜</button>
             </div>
-
-            <div class="top-title">
-                Bigdugg OS
-            </div>
-
-            <div class="system-icons">
-
-                <span>⌁</span>
-                <span>🔊</span>
-                <span>🔋</span>
-
-            </div>
-
-        </header>
-
-
-        <!-- Desktop -->
-
-        <main class="desktop-content">
-
-            <div class="welcome-text">
-
-                <h1>
-                    It's been a while.
-                </h1>
-
-                <p>
-                    ❤️
-                </p>
-
-            </div>
-
-
-            <!-- Message -->
-
-            <button
-                class="message-icon"
-                onclick="showNotification()"
-            >
-
-                <div class="mail-container">
-
-                    <span class="mail-icon">
-                        ✉️
-                    </span>
-
-                    <span class="message-count">
-                        1
-                    </span>
-
-                </div>
-
-                <span class="message-label">
-                    New Message
-                </span>
-
-            </button>
-
-        </main>
-
-
-        <!-- =========================
-             NOTIFICATION
-        ========================== -->
-
-        <div
-            id="notification"
-            class="notification"
-        >
-
-            <div class="notification-header">
-
-                <span>
-                    🔔 SYSTEM NOTICE
-                </span>
-
-                <button
-                    class="notification-close"
-                    onclick="closeNotification()"
-                >
-                    ×
-                </button>
-
-            </div>
-
-
-            <div class="notification-body">
-
-                <h3>
-                    1 important message
-                    requires your attention.
-                </h3>
-
-
-                <div class="risk-box">
-
-                    <div class="risk-label">
-                        RISK LEVEL
-                    </div>
-
-                    <div class="risk-value">
-                        HIGH ❤️
-                    </div>
-
-                </div>
-
-
-                <p>
-
-                    <strong>Reason:</strong>
-
-                    It's been a while since
-                    you received one of these.
-
-                </p>
-
-
-                <button
-                    class="review-button"
-                    onclick="openLetter()"
-                >
-                    REVIEW MESSAGE
-                </button>
-
-            </div>
-
+            <p class="login-hint">Hint: just press the arrow ❤️</p>
         </div>
-
-
-        <!-- =========================
-             DOCK
-        ========================== -->
-
-        <nav class="dock">
-
-            <button>📁</button>
-
-            <button>🌐</button>
-
-            <button onclick="showNotification()">
-                ✉️
-            </button>
-
-            <button>⚙️</button>
-
-        </nav>
-
+        <button id="login-ease" class="login-foot-btn left">♿ Ease of Access</button>
+        <button id="login-shutdown" class="login-foot-btn right">⏻ Shut down</button>
     </div>
 
+    <!-- WELCOME SCREEN -->
+    <div id="welcome-screen" class="screen welcome-screen hidden">
+        <div class="spinner"></div>
+        <span>Welcome</span>
+    </div>
+
+    <!-- DESKTOP (icons, taskbar and windows are added by script.js) -->
+    <div id="desktop" class="desktop">
+        <aside class="gadget glass" id="gadget">
+            <div class="gadget-title">It's been a while. ❤️</div>
+            <div class="gadget-sub" id="gadget-sub">You have 1 new message</div>
+            <button class="btn" id="gadget-open">Open Mail</button>
+        </aside>
+    </div>
 
     <script src="script.js"></script>
-
 </body>
-
 </html>

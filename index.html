@@ -1,48 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>System Notice</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Bigdugg OS</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="desktop">
+    <!-- =========================
+         BOOT SCREEN
+    ========================== -->
 
-        <!-- Top Linux-style bar -->
+    <div id="boot-screen" class="boot-screen">
+
+        <div class="boot-content">
+
+            <div class="linux-logo">
+                🐧
+            </div>
+
+            <h1>BIGDUGG OS</h1>
+
+            <p>Starting something special...</p>
+
+            <div class="boot-loader">
+                <div id="boot-progress"></div>
+            </div>
+
+            <p id="boot-status">
+                Initialising...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         DESKTOP
+    ========================== -->
+
+    <div id="desktop" class="desktop hidden">
+
+        <!-- Top bar -->
+
         <header class="top-bar">
 
             <div class="activities">
                 Activities
             </div>
 
+            <div class="top-title">
+                Bigdugg OS
+            </div>
+
             <div class="system-icons">
+
                 <span>⌁</span>
                 <span>🔊</span>
                 <span>🔋</span>
+
             </div>
 
         </header>
 
 
-        <!-- Main welcome message -->
-        <main class="welcome">
+        <!-- Desktop -->
 
-            <h1>It's been a while.</h1>
+        <main class="desktop-content">
 
-            <p>❤️</p>
+            <div class="welcome-text">
 
-            <button class="message-icon" onclick="openMessage()">
+                <h1>
+                    It's been a while.
+                </h1>
 
-                <span class="mail-icon">✉️</span>
+                <p>
+                    ❤️
+                </p>
 
-                <span class="message-count">1</span>
+            </div>
 
-                <span class="message-text">
+
+            <!-- Message -->
+
+            <button
+                class="message-icon"
+                onclick="showNotification()"
+            >
+
+                <div class="mail-container">
+
+                    <span class="mail-icon">
+                        ✉️
+                    </span>
+
+                    <span class="message-count">
+                        1
+                    </span>
+
+                </div>
+
+                <span class="message-label">
                     New Message
                 </span>
 
@@ -51,40 +119,66 @@
         </main>
 
 
-        <!-- Bottom dock -->
-        <nav class="dock">
+        <!-- =========================
+             NOTIFICATION
+        ========================== -->
 
-            <div class="dock-icon">📁</div>
-            <div class="dock-icon">🌐</div>
-            <div class="dock-icon">✉️</div>
-            <div class="dock-icon">⚙️</div>
+        <div
+            id="notification"
+            class="notification"
+        >
 
-        </nav>
+            <div class="notification-header">
 
+                <span>
+                    🔔 SYSTEM NOTICE
+                </span>
 
-        <!-- Risk notification -->
-        <div id="notification" class="notification">
+                <button
+                    class="notification-close"
+                    onclick="closeNotification()"
+                >
+                    ×
+                </button>
 
-            <div class="notification-title">
-                🔔 SYSTEM NOTICE
             </div>
+
 
             <div class="notification-body">
 
-                <strong>
-                    1 important message requires your attention.
-                </strong>
+                <h3>
+                    1 important message
+                    requires your attention.
+                </h3>
+
+
+                <div class="risk-box">
+
+                    <div class="risk-label">
+                        RISK LEVEL
+                    </div>
+
+                    <div class="risk-value">
+                        HIGH ❤️
+                    </div>
+
+                </div>
+
 
                 <p>
-                    <strong>Risk Level:</strong> HIGH ❤️
-                </p>
 
-                <p>
                     <strong>Reason:</strong>
-                    It's been a while since you received one of these.
+
+                    It's been a while since
+                    you received one of these.
+
                 </p>
 
-                <button onclick="openLetter()">
+
+                <button
+                    class="review-button"
+                    onclick="openLetter()"
+                >
                     REVIEW MESSAGE
                 </button>
 
@@ -92,10 +186,30 @@
 
         </div>
 
+
+        <!-- =========================
+             DOCK
+        ========================== -->
+
+        <nav class="dock">
+
+            <button>📁</button>
+
+            <button>🌐</button>
+
+            <button onclick="showNotification()">
+                ✉️
+            </button>
+
+            <button>⚙️</button>
+
+        </nav>
+
     </div>
 
 
     <script src="script.js"></script>
 
 </body>
+
 </html>

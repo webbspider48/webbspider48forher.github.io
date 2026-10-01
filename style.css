@@ -1,27 +1,177 @@
+/* =========================
+   GLOBAL
+========================= */
+
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
 
 body {
-    font-family: Arial, sans-serif;
-    overflow: hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+
 }
 
-.desktop {
+
+/* =========================
+   COMMON
+========================= */
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+button {
+
+    font-family: inherit;
+
+}
+
+
+/* =========================
+   BOOT SCREEN
+========================= */
+
+.boot-screen {
+
     width: 100vw;
+
     height: 100vh;
 
-    background: linear-gradient(
-        135deg,
-        #302b63,
-        #24243e
-    );
+    background:
+        radial-gradient(
+            circle at center,
+            #38316d,
+            #181827
+        );
 
     color: white;
 
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.boot-content {
+
+    width: 85%;
+
+    max-width: 400px;
+
+    text-align: center;
+
+}
+
+
+.linux-logo {
+
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.boot-content h1 {
+
+    font-size: 25px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.boot-content p {
+
+    color: #c7c7d8;
+
+    font-size: 14px;
+
+}
+
+
+.boot-loader {
+
+    width: 100%;
+
+    height: 7px;
+
+    background: #11111b;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin: 25px 0 12px;
+
+}
+
+
+#boot-progress {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #ffffff;
+
+    transition: width 0.1s;
+
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+.desktop,
+.letter-desktop,
+.assessment-desktop {
+
+    min-height: 100vh;
+
+    width: 100%;
+
     position: relative;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #403875,
+            #25243d 45%,
+            #171721
+        );
+
+    color: white;
+
 }
 
 
@@ -30,71 +180,122 @@ body {
 ========================= */
 
 .top-bar {
-    height: 45px;
 
-    background: rgba(20, 20, 20, 0.85);
+    height: 46px;
+
+    width: 100%;
+
+    background:
+        rgba(15, 15, 20, 0.88);
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
-    padding: 0 18px;
+    padding: 0 16px;
 
-    font-size: 14px;
+    position: relative;
+
+    z-index: 20;
+
+    backdrop-filter: blur(12px);
+
 }
+
 
 .activities {
+
+    font-size: 13px;
+
     font-weight: bold;
-}
 
-.system-icons {
-    display: flex;
-    gap: 12px;
 }
 
 
-/* =========================
-   WELCOME MESSAGE
-========================= */
-
-.welcome {
+.top-title {
 
     position: absolute;
 
-    top: 45%;
     left: 50%;
 
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 
-    text-align: center;
+    font-size: 12px;
 
-    width: 90%;
+    color: #cfcfe0;
+
 }
 
-.welcome h1 {
 
-    font-size: clamp(28px, 8vw, 48px);
+.system-icons {
 
-    font-weight: 400;
+    display: flex;
 
-    margin-bottom: 10px;
-}
+    gap: 10px;
 
-.welcome p {
+    font-size: 13px;
 
-    font-size: 28px;
-
-    margin-bottom: 30px;
 }
 
 
 /* =========================
-   MESSAGE ICON
+   HOME
+========================= */
+
+.desktop-content {
+
+    min-height: calc(100vh - 46px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px 20px 100px;
+
+}
+
+
+.welcome-text {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.welcome-text h1 {
+
+    font-size:
+        clamp(30px, 9vw, 52px);
+
+    font-weight: 300;
+
+    letter-spacing: -1px;
+
+}
+
+
+.welcome-text p {
+
+    font-size: 28px;
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================
+   MESSAGE
 ========================= */
 
 .message-icon {
-
-    position: relative;
 
     border: none;
 
@@ -110,44 +311,77 @@ body {
 
     align-items: center;
 
-    margin: auto;
+    -webkit-tap-highlight-color:
+        transparent;
+
 }
+
+
+.mail-container {
+
+    position: relative;
+
+}
+
 
 .mail-icon {
 
-    width: 75px;
-    height: 75px;
+    width: 80px;
 
-    background: rgba(255,255,255,0.12);
+    height: 80px;
 
-    border-radius: 16px;
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.12);
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     font-size: 38px;
 
-    transition: 0.2s;
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
+
 }
+
 
 .message-icon:hover .mail-icon {
 
-    transform: scale(1.08);
+    transform: translateY(-4px);
 
-    background: rgba(255,255,255,0.2);
+    background:
+        rgba(255,255,255,0.18);
+
 }
+
+
+.message-icon:active .mail-icon {
+
+    transform: scale(0.95);
+
+}
+
 
 .message-count {
 
     position: absolute;
 
-    top: -8px;
-    right: -8px;
+    top: -7px;
 
-    width: 25px;
-    height: 25px;
+    right: -7px;
+
+    width: 26px;
+
+    height: 26px;
 
     border-radius: 50%;
 
@@ -156,61 +390,24 @@ body {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     font-size: 13px;
 
     font-weight: bold;
+
 }
 
-.message-text {
 
-    margin-top: 10px;
+.message-label {
+
+    margin-top: 12px;
 
     font-size: 14px;
-}
 
+    color: #ddd;
 
-/* =========================
-   DOCK
-========================= */
-
-.dock {
-
-    position: absolute;
-
-    bottom: 15px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    display: flex;
-
-    gap: 12px;
-
-    padding: 10px 14px;
-
-    background: rgba(20,20,20,0.75);
-
-    border-radius: 18px;
-}
-
-.dock-icon {
-
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(255,255,255,0.1);
-
-    border-radius: 10px;
-
-    font-size: 20px;
 }
 
 
@@ -220,72 +417,1042 @@ body {
 
 .notification {
 
-    position: absolute;
+    position: fixed;
 
     top: 60px;
 
     right: 15px;
 
-    width: min(360px, calc(100% - 30px));
+    width:
+        min(370px, calc(100% - 30px));
 
-    background: rgba(25,25,25,0.96);
+    background:
+        rgba(28, 28, 36, 0.97);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
 
     border-radius: 12px;
 
-    padding: 18px;
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,0.5);
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    overflow: hidden;
 
-    transform: translateY(-150%);
+    transform:
+        translateY(-150%);
 
-    transition: transform 0.4s ease;
+    opacity: 0;
 
-    z-index: 10;
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+
+    z-index: 100;
+
 }
+
 
 .notification.show {
 
-    transform: translateY(0);
+    transform:
+        translateY(0);
+
+    opacity: 1;
+
 }
 
-.notification-title {
 
-    font-size: 13px;
+.notification-header {
+
+    padding: 14px 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 12px;
 
     font-weight: bold;
 
-    margin-bottom: 12px;
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+
 }
+
+
+.notification-close {
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
+
 
 .notification-body {
 
-    font-size: 14px;
+    padding: 18px;
+
+}
+
+
+.notification-body h3 {
+
+    font-size: 15px;
 
     line-height: 1.5;
+
+    margin-bottom: 15px;
+
 }
+
 
 .notification-body p {
 
-    margin-top: 8px;
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color: #d5d5df;
+
+    margin-top: 14px;
+
 }
 
-.notification button {
 
-    margin-top: 15px;
+.risk-box {
+
+    padding: 14px;
+
+    background:
+        rgba(231, 76, 60, 0.12);
+
+    border:
+        1px solid
+        rgba(231, 76, 60, 0.25);
+
+    border-radius: 8px;
+
+}
+
+
+.risk-label {
+
+    font-size: 10px;
+
+    color: #aaa;
+
+    letter-spacing: 1px;
+
+}
+
+
+.risk-value {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-top: 4px;
+
+}
+
+
+.review-button {
 
     width: 100%;
 
-    padding: 11px;
+    padding: 13px;
+
+    margin-top: 18px;
 
     border: none;
 
     border-radius: 7px;
 
-    background: #ffffff;
+    background: white;
 
     color: #222;
 
     font-weight: bold;
 
     cursor: pointer;
+
+}
+
+
+/* =========================
+   DOCK
+========================= */
+
+.dock {
+
+    position: fixed;
+
+    bottom: 14px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 8px;
+
+    padding: 8px;
+
+    background:
+        rgba(20,20,25,0.82);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    border-radius: 16px;
+
+    backdrop-filter: blur(15px);
+
+    z-index: 30;
+
+}
+
+
+.dock button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   MAIL WINDOW
+========================= */
+
+.letter-desktop {
+
+    min-height: 100vh;
+
+    padding-bottom: 100px;
+
+}
+
+
+.mail-window {
+
+    width:
+        min(850px, 94%);
+
+    margin:
+        35px auto 50px;
+
+    background: white;
+
+    color: #222;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.5);
+
+}
+
+
+.window-header {
+
+    height: 46px;
+
+    background: #292933;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 12px;
+
+}
+
+
+.window-title {
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+.window-buttons {
+
+    display: flex;
+
+    gap: 5px;
+
+}
+
+
+.window-buttons button {
+
+    width: 25px;
+
+    height: 25px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+
+.message-info {
+
+    background: #eeeeee;
+
+    padding: 15px;
+
+    border-bottom:
+        1px solid #d5d5d5;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+.message-info strong {
+
+    margin-right: 5px;
+
+}
+
+
+.letter-content {
+
+    padding:
+        35px 32px 45px;
+
+    background: #fff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+}
+
+
+.letter-content p {
+
+    margin-bottom: 25px;
+
+}
+
+
+.letter-greeting {
+
+    font-size: 22px;
+
+}
+
+
+.important-message {
+
+    font-size: 27px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    margin:
+        45px 0 !important;
+
+}
+
+
+.heart {
+
+    text-align: center;
+
+    font-size: 30px;
+
+}
+
+
+.letter-ending {
+
+    margin-top: 50px;
+
+}
+
+
+.signature {
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+}
+
+
+.window-status {
+
+    background: #eeeeee;
+
+    border-top:
+        1px solid #d5d5d5;
+
+    padding: 8px 12px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 11px;
+
+    color: #666;
+
+}
+
+
+/* =========================
+   CONTINUE
+========================= */
+
+.continue-container {
+
+    text-align: center;
+
+    margin-bottom: 80px;
+
+}
+
+
+.continue-button {
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #222;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   ASSESSMENT
+========================= */
+
+.assessment-desktop {
+
+    min-height: 100vh;
+
+}
+
+
+.assessment-container {
+
+    min-height:
+        calc(100vh - 46px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        30px 18px 100px;
+
+}
+
+
+.analysis-screen {
+
+    width:
+        min(500px, 100%);
+
+    text-align: center;
+
+}
+
+
+.terminal-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.analysis-screen h1 {
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.analysis-screen p {
+
+    color: #c9c9d5;
+
+    font-size: 14px;
+
+}
+
+
+.analysis-loader {
+
+    width: 100%;
+
+    height: 8px;
+
+    background: #11111a;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin: 25px 0 12px;
+
+}
+
+
+#analysis-progress {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: white;
+
+}
+
+
+.small-text {
+
+    font-size: 12px !important;
+
+}
+
+
+/* =========================
+   RESULT WINDOW
+========================= */
+
+.result-window {
+
+    width:
+        min(650px, 100%);
+
+    background: white;
+
+    color: #222;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.5);
+
+}
+
+
+.report-content {
+
+    padding: 28px;
+
+}
+
+
+.report-title {
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.report-line {
+
+    height: 1px;
+
+    background: #ddd;
+
+    margin: 20px 0;
+
+}
+
+
+.report-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid #eee;
+
+}
+
+
+.report-item span {
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+.report-item strong {
+
+    font-size: 15px;
+
+}
+
+
+.final-status {
+
+    text-align: center;
+
+    padding: 20px 0;
+
+}
+
+
+.final-status p {
+
+    font-size: 11px;
+
+    color: #777;
+
+    letter-spacing: 2px;
+
+}
+
+
+.final-status h2 {
+
+    font-size:
+        clamp(25px, 7vw, 38px);
+
+    margin-top: 10px;
+
+}
+
+
+.final-button {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #222;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+
+    width: 100%;
+
+}
+
+
+.final-window {
+
+    width:
+        min(550px, 100%);
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+}
+
+
+.final-linux-logo {
+
+    font-size: 65px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.final-window h1 {
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.status-list {
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+}
+
+
+.status-list div {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    font-size: 13px;
+
+}
+
+
+.status-list div:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.status-list span {
+
+    color: #aaa;
+
+}
+
+
+.status-list strong {
+
+    text-align: right;
+
+}
+
+
+.final-finding {
+
+    margin-top: 35px;
+
+}
+
+
+.final-finding p {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #aaa;
+
+}
+
+
+.final-finding h2 {
+
+    font-size:
+        clamp(30px, 9vw, 48px);
+
+    margin-top: 10px;
+
+}
+
+
+.final-finding span {
+
+    display: block;
+
+    font-size: 30px;
+
+    margin-top: 10px;
+
+}
+
+
+.signature-final {
+
+    margin-top: 45px;
+
+    color: #c8c8d5;
+
+    line-height: 2;
+
+}
+
+
+.signature-final strong {
+
+    display: block;
+
+    color: white;
+
+    font-size: 18px;
+
+}
+
+
+.terminal-easter-egg {
+
+    margin-top: 45px;
+
+    padding: 12px;
+
+    background:
+        rgba(0,0,0,0.25);
+
+    border-radius: 7px;
+
+    color: #aaa;
+
+    font-family:
+        monospace;
+
+    font-size: 11px;
+
+}
+
+
+.terminal-easter-egg span {
+
+    color: white;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+
+    .top-bar {
+
+        padding:
+            0 12px;
+
+    }
+
+
+    .activities {
+
+        font-size: 12px;
+
+    }
+
+
+    .system-icons {
+
+        gap: 7px;
+
+        font-size: 11px;
+
+    }
+
+
+    .top-title {
+
+        font-size: 11px;
+
+    }
+
+
+    .welcome-text h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .notification {
+
+        top: 55px;
+
+    }
+
+
+    .mail-window {
+
+        width: 94%;
+
+        margin:
+            22px auto 40px;
+
+        border-radius: 8px;
+
+    }
+
+
+    .message-info {
+
+        padding: 13px;
+
+        font-size: 12px;
+
+    }
+
+
+    .letter-content {
+
+        padding:
+            28px 20px 35px;
+
+        font-size: 17px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .letter-content p {
+
+        margin-bottom: 23px;
+
+    }
+
+
+    .important-message {
+
+        font-size: 25px;
+
+        margin:
+            35px 0 !important;
+
+    }
+
+
+    .report-content {
+
+        padding: 22px 18px;
+
+    }
+
+
+    .report-item {
+
+        padding: 12px 0;
+
+    }
+
+
+    .status-list div {
+
+        font-size: 12px;
+
+        padding: 13px;
+
+    }
+
+
+    .dock {
+
+        bottom: 10px;
+
+    }
+
+
+    .dock button {
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
 }
